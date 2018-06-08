@@ -1,0 +1,14 @@
+node{
+    stage('getting code'){
+    build job: 'getting code'
+    }
+    stage('codestability'){
+    build job: 'codestabilityday3'
+    }
+    stage('codeanalysis'){
+        build job: 'codeanalysis'
+    }
+    stage('code coverage'){
+        build job: 'codecoverage'
+    }
+}
