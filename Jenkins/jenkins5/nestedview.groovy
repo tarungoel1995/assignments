@@ -1,8 +1,10 @@
 job('Nested View') {
   nestedView('simple-jobs') {
     views {
-        listView('"Hello World","Hello Person", "GIT CLONE", "PERIODICAL","POLLSCM"') 
-      {      
+        listView('Simple jobs') 
+      {      jobs{
+        names('Hello World','Hello Person','GIT CLONE','PERIODICAL','POLLSCM')
+      }
             columns {
                 status()
                 weather()
@@ -15,7 +17,10 @@ job('Nested View') {
   }
       nestedView('complex-jobs') {
     views {
-        listView('"UPSTREAM", "DOWNSTREAM"') {
+        listView('Complex-jobs') {
+          jobs{
+          names('UPSTREAMJOB','DOWNSTREAM')
+          }
             columns {
                 status()
                 weather()
