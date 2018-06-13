@@ -9,5 +9,5 @@ RUN wget https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana-${V
     /sbin/chkconfig --add grafana-server
 ADD startup.sh /startup.sh
 
-#CMD sh /startup.sh
+CMD sh /startup.sh
 
