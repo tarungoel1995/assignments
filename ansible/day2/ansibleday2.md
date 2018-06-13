@@ -10,8 +10,10 @@ Perform the following operations using ad-hoc commands and ansible modules :
 # ansible all -m setup --tree /tmp/facts | grep fqdn
 4. Display the uptime of all hosts using the command module.
 # ansible all -m command -a “uptime”
+link: https://github.com/tarungoel1995/assignments/blob/master/ansible/day2/media/limitedpinganduptime.png
 5. Ping all hosts except the 'control' host using the –limit option
-# ansible all -m ping --limit 'all:!centos'
+# ansible all -m ping --limit 'all:!devops'
+link: https://github.com/tarungoel1995/assignments/blob/master/ansible/day2/media/limitedpinganduptime.png
 6. Setup Java8 on the hosts in the "App" group using the apt module.
 # ansible main -m apt_repository -u root -a "repo=ppa:webupd8team/java"
 # ansible all -m command -a "sudo apt-get update"
