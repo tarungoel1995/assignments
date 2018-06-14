@@ -1,0 +1,51 @@
+---
+- name: "Install tomcat 8 on 2 hosts"
+  hosts: all
+  become: true
+  become_user: root
+  gather_facts: true
+  tasks:
+   - name: "Add repository"
+     apt_repository:
+       repo: ppa:webupd8team/java
+       state: present
+   - name: "updating"
+     apt:
+       update_cache: yes
+   - name: "installing java8"
+     apt:
+       name: oracle-java8-installer
+       state: present
+   - name: "set Java 8 as your default Java version"
+     apt:
+       name: oracle-java8-set-default
+       state: present
+   - name: "set JAVA_HOME and JRE_HOME environment variables"
+     lineinfile:
+       path: /etc/environment
+       line: "JAVA_HOME=/usr/lib/jvm/java-8-oracle"
+       line: "JRE_HOME=/usr/lib/jvm/java-8-oracle/jre"
+
+   - name: "Install tomcat8"
+     apt:
+       name: tomcat8
+       state: present
+   - name: "Stop tomcat"
+     service:
+       name: tomcat8
+       state: stopped
+   - name: "copy war file into webapps folder of tomcat"
+     copy:
+       src: /home/vagrant/sample.war
+       dest: /usr/share/tomcat8/webapps
+   - name: "Enable tomcat"
+     service:
+       name: tomcat8
+       enabled: yes
+
+   - name: "starting tomcat"
+     service:
+       name: tomcat8
+       state: started
+
+
