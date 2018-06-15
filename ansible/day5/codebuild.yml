@@ -1,0 +1,27 @@
+---
+- name: "getting code and testing the code and building the artifact"
+  hosts: all
+  become: true
+  become_user: root
+  gather_facts: true
+  tasks:
+   
+   - name: "getting code from git hub"
+     git:
+       repo: "https://github.com/tarungoel1995/ContinuousIntegration.git"
+       dest: /root/ansible5
+       clone: yes
+       update: no
+
+   - name: "installing maven"
+     apt:
+       name: maven
+       state: latest
+       update_cache: yes
+       cache_valid_time: 3600
+      
+   - name: "testing code and buildng artifact" 
+     command: mvn package install
+     args:
+       chdir: /root/ansible5/Spring3HibernateApp 
+
