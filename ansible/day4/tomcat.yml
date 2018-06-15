@@ -6,16 +6,18 @@
   gather_facts: true
   tasks:
    - name: "Add repository"
-     apt_repository:
+     apt_repository: 
        repo: ppa:webupd8team/java
        state: present
    - name: "updating"
      apt:
        update_cache: yes
-   - name: "installing java8"
-     apt:
-       name: oracle-java8-installer
-       state: present
+   - name: Debian | Accept Oracle Java License
+     debconf:
+       name: "oracle-java8-installer"
+       question: 'shared/accepted-oracle-license-v1-1'
+       value: 'true'
+       vtype: 'select'
    - name: "set Java 8 as your default Java version"
      apt:
        name: oracle-java8-set-default
@@ -25,19 +27,28 @@
        path: /etc/environment
        line: "JAVA_HOME=/usr/lib/jvm/java-8-oracle"
        line: "JRE_HOME=/usr/lib/jvm/java-8-oracle/jre"
-
+     
    - name: "Install tomcat8"
-     apt:
+     apt: 
        name: tomcat8
        state: present
    - name: "Stop tomcat"
      service:
-       name: tomcat8
+       name: tomcat8 
        state: stopped
    - name: "copy war file into webapps folder of tomcat"
-     copy:
+     copy: 
        src: /home/vagrant/sample.war
-       dest: /usr/share/tomcat8/webapps
+       dest: /var/lib/tomcat8/webapps/
+   - name: "install unzip"
+     apt:
+       name: unzip
+       state: present
+   - name: Unarchive a file that is already on the remote machine
+     unarchive:
+       src: /var/lib/tomcat8/webapps/sample.war
+       dest: /var/lib/tomcat8/webapps/
+       remote_src: yes
    - name: "Enable tomcat"
      service:
        name: tomcat8
