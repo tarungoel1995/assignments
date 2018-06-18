@@ -4,17 +4,21 @@ Assignment
 Create an Ansible playbook to rotate ssh keys. Explaination - Replacing the keys you’re currently using with new keys, and removing the ability for old keys to be used to log into your systems.
 
 1. Create a new key 
-	#ssh-keygen -t rsa
+```	#ssh-keygen -t rsa
 	#cat id_rsa.pub (copy the public key and paste it into the auhtorized_keys of user)
+```
+
 
 2. Add new key to authorized_keys files on your nodes
+```
 #go to the nodes and perform following actions
 #cd /path to the home directory of user/.ssh
 #vim authorized_keys (paste the public key here , copied from above step)
-
+```
 3. Test new key
+```
 #ssh username@ipaddress  
-
+```
 4. Remove previous keys from authorized_keys files on your nodes.
 Added ip of nodes into inventory file and was able to ping the nodes using following command
 ```
