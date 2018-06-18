@@ -17,6 +17,7 @@ Create an Ansible playbook to rotate ssh keys. Explaination - Replacing the keys
 
 4. Remove previous keys from authorized_keys files on your nodes.
 Added ip of nodes into inventory file and was able to ping the nodes using following command
+
 #ansible all -m ping
 #ssh-keygen -t rsa 
 #Enter file in which to save the key: /root/.ssh/id_rsa1
