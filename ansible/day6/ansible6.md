@@ -23,8 +23,8 @@ Added ip of nodes into inventory file and was able to ping the nodes using follo
 #Your public key has been saved in /root/.ssh/id_rsa1.pub
 #written the playbook to rotate the new public keys in the authorized_keys of all nodes.
 Link: https://github.com/tarungoel1995/assignments/blob/master/ansible/day6/rotatingpublickeys.yml
-Output: ![Rotating keys] (https://github.com/tarungoel1995/assignments/blob/master/ansible/day6/rotatingpublickeys.png)
+Output: ![Rotating keys](https://github.com/tarungoel1995/assignments/blob/master/ansible/day6/rotatingpublickeys.png)
 
 5. again test the connectivity with the new keys. 
-Output Link: ![ssh with new keys] (https://github.com/tarungoel1995/assignments/blob/master/ansible/day6/loginwithnewkey.png)
+Output Link: ![ssh with new keys](https://github.com/tarungoel1995/assignments/blob/master/ansible/day6/loginwithnewkey.png)
 	
