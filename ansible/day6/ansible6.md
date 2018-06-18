@@ -30,8 +30,8 @@ Added ip of nodes into inventory file and was able to ping the nodes using follo
 ```
 
 Link: https://github.com/tarungoel1995/assignments/blob/master/ansible/day6/rotatingpublickeys.yml
-Output: ![Rotating keys](https://github.com/tarungoel1995/assignments/blob/master/ansible/day6/rotatingpublickeys.png)
+Output: ![Rotating keys](https://github.com/tarungoel1995/assignments/blob/master/ansible/day6/media/rotatingpublickeys.png)
 
 5. again test the connectivity with the new keys. 
-Output Link: ![ssh with new keys](https://github.com/tarungoel1995/assignments/blob/master/ansible/day6/loginwithnewkey.png)
+Output Link: ![ssh with new keys](https://github.com/tarungoel1995/assignments/blob/master/ansible/day6/media/loginwithnewkey.png)
 	
