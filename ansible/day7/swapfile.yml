@@ -1,0 +1,32 @@
+---
+- name: "Adding swap space in node"
+  hosts: all
+  become_user: root
+  gather_facts: true
+  tasks:
+
+   - name: "Creating Swap File"
+     command: fallocate -l 100M /swapfile
+
+   - name: "Making the file only accessible to root"
+     file:
+       path: /swapfile 
+       mode: 600 
+       state: file
+
+   - name: "making /swapfile swap"
+     command:  mkswap /swapfile 
+
+   - name: "enabling the swap file"
+     command: swapon /swapfile
+
+   - name: "Making the swap space permanent"
+     lineinfile:
+       path: /etc/fstab
+       regexp: "swapfile"
+       line: "/swapfile none swap sw 0 0"
+       state: present
+
+   - name: "starting swap"
+     command: swapon -a
+
