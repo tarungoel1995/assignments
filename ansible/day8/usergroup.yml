@@ -1,0 +1,42 @@
+---
+- name: "Creating 5 users, adding them into a group,managing permission on a specific directory and adding their keys"
+  hosts: all
+  become_user: root
+  gather_facts: true
+  tasks:
+    - name: "Creating devops group"
+      group:
+        name: devops
+        state: present
+    - name: "Creating 5 users"
+      user:
+        name: "{{ item }}"
+        create_home: yes
+        state: present
+        password: ubuntuuser
+        shell: /bin/bash
+        group: devops
+        append: yes
+        generate_ssh_key: yes
+      with_items:
+        - vagrant1
+        - vagrant2
+        - vagrant3
+        - vagrant4
+        - vagrant5
+
+    - name: "Creating Directory"
+      file:
+        path: /ansible
+        state: directory
+
+    - name: "Setting permissions on directory for devops group"
+      acl:
+        path: /ansible
+        entity: devops
+        etype: group
+        permissions: rx
+        default: yes
+        state: present
+
+

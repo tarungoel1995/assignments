@@ -1,0 +1,60 @@
+---
+ - name: "creating Logical Volumes"
+   hosts: all
+   become_user: root
+   gather_facts: true
+   tasks:
+    - name: "Installing LVM2"
+      apt:
+        name: lvm2
+        state: present
+    - name: "Creating physical volume and volume group"
+      lvg:
+        vg: LVM
+        pvs: /dev/sdb
+        pesize: 2
+        state: present
+    - name: "Creating logical volumes"
+      lvol:
+        vg: LVM
+        lv: "{{ item }}"
+        size: 2M
+        pvs: /dev/sdb
+      with_items:
+        - LV1
+        - LV2
+        - LV3
+        - LV4
+
+    - name: "Giving ext4 Filsystem to the above created logical volumes"
+      filesystem:
+        fstype: ext4
+        dev: /dev/LVM/{{ item }}
+      with_items:
+        - LV1
+        - LV2
+        - LV3
+        - LV4
+    - name: "Creating mount points for logical volumes"
+      file:
+        path: /mnt/{{ item }}
+        state: directory
+      with_items:
+        - LV1
+        - LV2
+        - LV3
+        - LV4
+    - name: "Mounting Logical volumes"
+      mount:
+        path: /mnt/{{ item }}
+        src: /dev/LVM/{{ item }}
+        fstype: ext4
+        fstab: /etc/fstab
+        state: present
+      with_items:
+        - LV1
+        - LV2
+        - LV3
+        - LV4
+
+
