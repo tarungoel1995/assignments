@@ -1,0 +1,9 @@
+---
+# tasks file for tomcat
+- name: "Installs tomcat8 on Debian Linux Flavour"
+  include_tasks: ubuntu.yml
+  when: ansible_os_family == 'Debian'
+
+- name: "Installs tomcat8 on Redhat Linux Flavour"
+  include_tasks: centos.yml
+  when: ansible_os_family == 'RedHat'

@@ -1,0 +1,15 @@
+---
+   - name: "Install tomcat8"
+     apt: 
+       name: tomcat8
+       state: present
+
+   - name: "Enable tomcat"
+     service:
+       name: tomcat8
+       enabled: yes
+
+   - name: "starting tomcat"
+     service:
+       name: tomcat8
+       state: started
