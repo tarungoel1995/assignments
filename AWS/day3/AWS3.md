@@ -69,6 +69,9 @@ ansible-playbook main.yml
 Task 3
 
 write a jobDsl to start stop this instance through jenkins
+
+#create a IAM user and allow EC2 FULLACCESS to him 
+#add the credentials(Access key, Secret key, region code , format) in jenkins user by which jenkin server is running 
 ```
 #Job will take 2 parameters StarStop and Instanceid and will perform respective actions.
 DSL:
