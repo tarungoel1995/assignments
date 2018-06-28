@@ -10,23 +10,27 @@ Steps: #Launch a new linux t2.micro ec2 instance. Take SSH login into same.
 ```
 ![errror](https://github.com/tarungoel1995/assignments/blob/master/AWS/day3/media/error.png)
 
-```#to resolve this issue i created a new instance and stopped the instance in which error was coming.
+```
+#to resolve this issue i created a new instance and stopped the instance in which error was coming.
 ```
 ![recovery instance](https://github.com/tarungoel1995/assignments/blob/master/AWS/day3/media/instances.png)
 
-```#dettach the vloume of old instance and attach the same volume with new instance.
+```
+#dettach the vloume of old instance and attach the same volume with new instance.
 ```
 
 ![volumesection](https://github.com/tarungoel1995/assignments/blob/master/AWS/day3/media/volumes.png)
 
-```#SSH login in new instance and create a recovery  directory in / which will work as a mount point for extra volume. And preformed the following steps:
+```
+#SSH login in new instance and create a recovery  directory in / which will work as a mount point for extra volume. And preformed the following steps:
 ```
 
 ![mount](https://github.com/tarungoel1995/assignments/blob/master/AWS/day3/media/mountingerrormachinevolume.png)
 
 ![moving the file and again unmonting the volume](https://github.com/tarungoel1995/assignments/blob/master/AWS/day3/media/movingsudoersfileandunmounting.png)
 
-```#Dettach the volume from the recovery instance and attach the vloume to old instance and when SSH login in old instance issue is resolved.
+```
+#Dettach the volume from the recovery instance and attach the vloume to old instance and when SSH login in old instance issue is resolved.
 ```
 
 ![recovered](https://github.com/tarungoel1995/assignments/blob/master/AWS/day3/media/recovered.png)
@@ -39,9 +43,11 @@ This Role will simply host an nginx webpage saying
 "Hi i am ninja and my name is {yourname}" 
 Execute this role in user data script while launching another instance
 Your website should be up & running after the system boots up
-```nginx role link: https://github.com/tarungoel1995/AWSROLES
 ```
-```User data script:
+nginx role link: https://github.com/tarungoel1995/AWSROLES
+```
+```
+User data script:
 
 #!/bin/bash
 sudo su
@@ -63,7 +69,8 @@ ansible-playbook main.yml
 Task 3
 
 write a jobDsl to start stop this instance through jenkins
-```#Job will take 2 parameters StarStop and Instanceid and will perform respective actions.
+```
+#Job will take 2 parameters StarStop and Instanceid and will perform respective actions.
 DSL:
 job('INSTANCESTARTSTOP') {
    parameters
