@@ -3,7 +3,8 @@ Assignment 3 AWS
 Task 1
 Create a linux t2.micro ec2 instance. After logging into this instance move /etc/sudoers file with /etc/sudoers.bkp
 Now try to login, If can't - resolve this issue
-```Steps: #Launch a new linux t2.micro ec2 instance. Take SSH login into same.
+```
+Steps: #Launch a new linux t2.micro ec2 instance. Take SSH login into same.
  #mv /etc/sudoers /etc/sudoers.bkp
 #when i try to to sudo su, iwas getting this error
 ```
