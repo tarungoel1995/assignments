@@ -1,9 +1,14 @@
 ---
-- name: "AWS"
+- name: "AWS Operations"
   hosts: localhost
-  gather_facts: false
+  gather_facts: true
   tasks:
-  - name: "Creating an IAM user"
+  - name: "Generating Key pair in North virginia region"
+    ec2_key:
+      name: RHEL
+      region: us-east-1
+      state: present
+  - name: "IAM user creation"
     iam:
      iam_type: user
      name: holu
@@ -11,12 +16,12 @@
      groups: tarungoel1995
      password: 123
      access_key_state: create
-  - name: "creating security group"
+  - name: "security group creation"
     ec2_group:
       name: holu-sg
       description: sg with rule descriptions
-      vpc_id: vpc-381a5550
-      region: ap-south-1
+      vpc_id: vpc-e4f1199e
+      region: us-east-1
       rules:
        - proto: tcp
          ports:
@@ -25,19 +30,18 @@
            - 443
          cidr_ip: 0.0.0.0/0
          rule_desc: allow all on port 80
-  - name: "Creating an EC2 Instance"
+  - name: "ec2 instance creating"
     ec2:
-      key_name: holu
-      group: tarungoel1995
+      key_name: RHEL
       instance_type: t2.micro
-      image: ami-41e9c52e
+      image: ami-b70554c8
       volumes:
-       - device_name: /dev/sda1
-         volume_type: gp2
-         volume_size: 8
-         delete_on_termination: true
-      instance_tags: holu
-      count: 1
-      vpc_subnet_id: subnet-53c8b83b
+        - device_name: /dev/sda1
+          volume_type: gp2
+          volume_size: 8
+      instance_tags:
+          Name: holu
+      vpc_subnet_id: subnet-aa79dfcd
+      region: us-east-1
       assign_public_ip: yes
-      state: present
+      count: 1
