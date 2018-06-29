@@ -45,4 +45,5 @@ Task 3
 
 Launch an ec2 instance with user-data having ansible role to host a website - [like previous assignment]
 Figure out a way to launch this instance in your friend's AWS account
+
 (Pending, will update as soon as completed)
