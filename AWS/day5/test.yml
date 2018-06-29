@@ -1,0 +1,43 @@
+---
+- name: "AWS"
+  hosts: localhost
+  gather_facts: false
+  tasks:
+  - name: "Creating an IAM user"
+    iam:
+     iam_type: user
+     name: holu
+     state: present
+     groups: tarungoel1995
+     password: 123
+     access_key_state: create
+  - name: "creating security group"
+    ec2_group:
+      name: holu-sg
+      description: sg with rule descriptions
+      vpc_id: vpc-381a5550
+      region: ap-south-1
+      rules:
+       - proto: tcp
+         ports:
+           - 22
+           - 80
+           - 443
+         cidr_ip: 0.0.0.0/0
+         rule_desc: allow all on port 80
+  - name: "Creating an EC2 Instance"
+    ec2:
+      key_name: holu
+      group: tarungoel1995
+      instance_type: t2.micro
+      image: ami-41e9c52e
+      volumes:
+       - device_name: /dev/sda1
+         volume_type: gp2
+         volume_size: 8
+         delete_on_termination: true
+      instance_tags: holu
+      count: 1
+      vpc_subnet_id: subnet-53c8b83b
+      assign_public_ip: yes
+      state: present
