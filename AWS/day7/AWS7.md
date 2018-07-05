@@ -19,6 +19,7 @@ Solution for First Scenario
 ![Group with users added](https://github.com/tarungoel1995/assignments/blob/master/AWS/day7/media/Groupwithusers.png)
 
 #created 2 policies 
+
 #First Policy to allow user to do evreything with t2.micro and m-family instances. In this manner members of group devops won’t be able to lanuch any other type of instance other than above mentioned.
 
 ![allow policy](https://github.com/tarungoel1995/assignments/blob/master/AWS/day7/media/t2andm5launchaccess.png)
