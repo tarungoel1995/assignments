@@ -13,7 +13,7 @@ Puppet master slave setup
 #on msater
 - vim /etc/hosts (and add a entry )
 
-[172.2.0.2  puppet puppet.master.co]
+[192.168.33.61  puppet puppet.master.co]
 
 - vim /etc/puppet/puppet.conf (add entry in master section)
 
