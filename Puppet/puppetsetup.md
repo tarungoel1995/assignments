@@ -12,18 +12,28 @@ Puppet master slave setup
 
 #on msater
 - vim /etc/hosts (and add a entry )
+
 [172.2.0.2  puppet puppet.master.co]
+
 - vim /etc/puppet/puppet.conf (add entry in master section)
+
 [    dns_alt_names = puppet,puppet.master.co
-    certname=puppet]
+
+certname=puppet]
+
 - service puppetmaster start
 
 #on slave 
 -vim /etc/hosts
+
 192.168.33.62 puppetagent
+
 192.168.33.61 puppet puppet.master.co
+
 - vim /etc/puppet/puppet.conf (on agent section)
+
 server = puppet.master.co
+
 - service puppet start
 
 #on master
