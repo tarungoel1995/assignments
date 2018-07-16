@@ -9,8 +9,14 @@
       - TASK: Docker
   - Set above defined variables from a file
   - Set container default login directory to /var/log
-
+  
 ``` 
+#cat evs.env
+  Name=Tarun
+  ORG=Opstre
+  Team=Ninja
+  Task=Docker
+
 #docker run  -it --name ub21 --env-file="evs.env" --memory="800m" -h ub.example.com --workdir="/var/log" ubuntu:16.04 /bin/bash
 ```
 
