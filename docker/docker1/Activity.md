@@ -99,5 +99,5 @@ Docker Monitoring
   #Output:
 CONTAINER ID        NAME                 CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
 2e4786850844        inspiring_bhaskara   0.00%               2.559MiB / 6.753GiB   0.04%               11.8kB / 0B         0B / 0B             2
-bd909139309c        nostalgic_meninsky   0.00%               2.5MiB / 6.753GiB     0.04%               11.9kB / 0B         6.54MB / 0B         2
+bd909139309c        test                 0.00%               2.5MiB / 6.753GiB     0.04%               11.9kB / 0B         6.54MB / 0B         2
 ```
