@@ -1,15 +1,18 @@
 
 What Is Puppet?
 
+```
 -Puppet is a Configuration Management tool that is used for deploying, configuring and managing servers. It performs the following functions:
 
 -Defining distinct configurations for each and every host, and continuously checking and confirming whether the required configuration is in place and is not altered (if altered Puppet will revert back to the required configuration) on the host. 
 Providing control over all your configured machines, so a centralized (master-server ) change gets propagated to all, automatically. 
 
 -Puppet uses a Master Slave architecture in which the Master and Slave communicate through a secure encrypted channel with the help of SSL.
+```
 
 How Puppet Works?
 
+```
 -Puppet uses a Master-Slave architecture.
 
 -The Puppet Agent sends the Facts to the Puppet Master. 
@@ -19,17 +22,17 @@ How Puppet Works?
 -Puppet Master uses the facts to compile a Catalog that defines how the Slave should be configured. Catalog is a document that describes the desired state for each resource that Puppet Master manages on a Slave.
 
 -Puppet Slave reports back to Master indicating that Configuration is complete, which is visible in the Puppet dashboard. 
-
+```
 
 Components of Puppet
-
+```
 Manifests: Every Slave has got its configuration details in Puppet Master, written in the  Puppet language. These details are written in the language which Puppet can understand and are termed as Manifests. They are composed of Puppet code and their filenames use the .pp extension. These are basically Puppet programs. 
 For example: You can write a Manifest in Puppet Master that creates a file and installs Apache server on all Puppet Slaves connected to the Puppet Master.
 
 Module: A Puppet Module is a collection of Manifests and data (such as facts, files, and templates), and they have a specific directory structure. Modules are useful for organizing your Puppet code, because they allow you to split your code into multiple Manifests. Modules are self-contained bundles of code and data.
 
 Resource: Resources are the fundamental unit for modeling system configurations. Each Resource describes some aspect of a system, like a specific service or package.
-
+```
 
 
 Puppet master slave setup
