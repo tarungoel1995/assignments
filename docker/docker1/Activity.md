@@ -24,8 +24,6 @@ Docker Lifecycle
 - Get /var/log/dpkg.log on your host machine from container
 
 ```
-- Get /var/log/dpkg.log on your host machine from container
-```
 #docker cp ubuntu:/var/log/dpkg.log .
 ```
 - Delete /var/log/dpkg.log that file from container
