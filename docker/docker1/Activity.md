@@ -18,6 +18,12 @@
   Task=Docker
 
 #docker run  -it --name ub21 --env-file="evs.env" --memory="800m" -h ub.example.com --workdir="/var/log" ubuntu:16.04 /bin/bash
+#docker stats ub21
+#output:
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+6aedd166bf58        ub21                0.00%               1.762MiB / 800MiB   0.22%               3.2kB / 0B          7.18MB / 0B         1
+
+
 ```
 
 
