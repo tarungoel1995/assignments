@@ -1,20 +1,25 @@
 
 What Is Puppet?
 
-Puppet is a Configuration Management tool that is used for deploying, configuring and managing servers. It performs the following functions:
+-Puppet is a Configuration Management tool that is used for deploying, configuring and managing servers. It performs the following functions:
 
-Defining distinct configurations for each and every host, and continuously checking and confirming whether the required configuration is in place and is not altered (if altered Puppet will revert back to the required configuration) on the host. 
+-Defining distinct configurations for each and every host, and continuously checking and confirming whether the required configuration is in place and is not altered (if altered Puppet will revert back to the required configuration) on the host. 
 Providing control over all your configured machines, so a centralized (master-server ) change gets propagated to all, automatically. 
 
-Puppet uses a Master Slave architecture in which the Master and Slave communicate through a secure encrypted channel with the help of SSL.
+-Puppet uses a Master Slave architecture in which the Master and Slave communicate through a secure encrypted channel with the help of SSL.
 
 How Puppet Works?
 
-Puppet uses a Master-Slave architecture.
+-Puppet uses a Master-Slave architecture.
 
-The Puppet Agent sends the Facts to the Puppet Master. Facts are basically key/value data pair that represents some aspect of Slave state, such as its IP address, up-time, operating system.
-Puppet Master uses the facts to compile a Catalog that defines how the Slave should be configured. Catalog is a document that describes the desired state for each resource that Puppet Master manages on a Slave. I will explain catalogs and resources in detail later. 
-Puppet Slave reports back to Master indicating that Configuration is complete, which is visible in the Puppet dashboard. 
+-The Puppet Agent sends the Facts to the Puppet Master. 
+
+-Facts are basically key/value data pair that represents some aspect of Slave state, such as its IP address, up-time, operating system.
+
+-Puppet Master uses the facts to compile a Catalog that defines how the Slave should be configured. Catalog is a document that describes the desired state for each resource that Puppet Master manages on a Slave.
+
+-Puppet Slave reports back to Master indicating that Configuration is complete, which is visible in the Puppet dashboard. 
+
 
 Components of Puppet
 
@@ -229,27 +234,4 @@ Browser Verification
 ![browser verification](https://github.com/tarungoel1995/assignments/blob/master/Puppet/media/nginxusingmodule.png)
 
 
-#on master
-- puppet module install puppetlabs-java
-- vim /etc/puppet/manifests/site.pp
-```
-class { 'java' :
-  package => 'java-1.8.0-openjdk-devel',
-}
-```
-- puppet module install puppetlabs-tomcat
--vi /etc/puppet/manifests/site.pp
-```
-class { 'java' :
-  package => 'java-1.8.0-openjdk-devel',
-}
-tomcat::install { '/opt/tomcat':
- source_url => 'http://www-eu.apache.org/dist/tomcat/tomcat-8/v8.5.32/bin/apache-tomcat-8.5.32.tar.gz',
-}
-tomcat::instance { 'default':
-   catalina_home => '/opt/tomcat',
-}
-```
 
-#on slave
--puppet agent -t
