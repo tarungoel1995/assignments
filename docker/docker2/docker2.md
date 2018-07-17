@@ -74,15 +74,54 @@ b78ad027cede        alpine              "/bin/sh"           5 seconds ago       
 Oupout:-
 Error response from daemon: conflict: unable to remove repository 	reference "alpine" (must force) - container b78ad027cede is using its 	referenced image 3fd9065eaf02
 ```
+
 Assignment 2
 
 1. Again pull "alpine" image from docker registry.
+
+#docker pull alpine
+
 2. Take interactive login to bash while running docker container from "alpine" image.
+
+#docker run -it -name alpine alpine ash
+
 3. Run command inside container: echo "hello world" > hello.txt ls
+```
+# echo “hello world” > hello.txt
+# ls
+Output: 
+bin        hello.txt  media      root       srv        usr
+dev        home       mnt        run        sys        var
+etc        lib        proc       sbin       tmp
+```
 4. Take exit from same container without killing the container.
+
+#ctrl + p + q
+
 5. Run another container using below command and check if you can find hello.txt within this container. You should find container isolations from step 3-5. docker container run alpine ls
+
+```
+# docker run -it  alpine ash
+# ls
+Output:
+bin    etc    lib    mnt    root   sbin   sys    usr
+dev    home   media  proc   run    srv    tmp    var
+(There is no hello.txt present in this conatiner)
+```
+
 6. Stop a container using Container ID.
+
+#sudo docker stop e08e6d8fd030
+
 7. Start same container using ID and exec a command "echo 'hello world!'" in docker container without instantiating a new container.
+```
+#sudo docker start e08e6d8fd030
+#sudo docker exec -it  echo e08e6d8fd030 "hello world"
+```
 8. Inspect already downloaded "alpine" docker image using docker inspect command.
+
+#sudo docker inpect alpine
+
 9. Tag your local "alpine" image with name "myimage" along with version 1.0
 
+#sudo docker tag alpine myimage:version1.0
