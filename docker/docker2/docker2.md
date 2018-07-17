@@ -8,7 +8,7 @@
 2. Pull "alpine" image from docker registry and see if image is available in your local image list.
 ```
 #docker pull alpine
-#docker image
+#docker images
 Output:-
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 hello-world         latest              e38bc07ac18e        6 weeks ago         1.85kB
