@@ -2,6 +2,7 @@
 
 	Assignment 1
 1. Run a docker container from "hello-world" image.
+
 #docker run hello-world
 
 2. Pull "alpine" image from docker registry and see if image is available in your local image list.
@@ -14,7 +15,9 @@ hello-world         latest              e38bc07ac18e        6 weeks ago         
 alpine              latest              3fd9065eaf02        4 months ago        4.15MB
 ```
 3. Pull some specific version of docker "alpine" image from docker registry.
+
 #docker pull alpine:3.3
+
 4. Run a docker container from local image "alpine" and run an inline command "ls -l" while running container.
 ```
 # docker run -it alpine ls -l
@@ -39,9 +42,11 @@ drwxr-xr-x   11 root     root          4096 Jan  9 19:37 var
 ```
 
 5. Try to take login to container created using "alpine" image.
+
 #docker run -it alpine /bin/ash
 
 6. Detach yourself from the container without making it exit/container kill.
+
 #ctrl + p +q
 
 7. Check running containers and see if you can find out the stopped containers.
@@ -52,11 +57,17 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 b78ad027cede        alpine              "/bin/sh"           5 seconds ago       Up 4 seconds                            quirky_dubinsky
 ```
 8. Stop running container.
+```
 #docker stop b78ad027cede
 #docker ps (you will see no container is running)
+```
+
 9. Start container that was stopped earlier.
+
+```
 #docker start b78ad027cede
 #docker ps (you will see container is running with same container id)
+```
 10. Try to remove "alpine" image from your local system.
 ```
 #docker rmi alpine
