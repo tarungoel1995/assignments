@@ -116,7 +116,7 @@ dev    home   media  proc   run    srv    tmp    var
 7. Start same container using ID and exec a command "echo 'hello world!'" in docker container without instantiating a new container.
 ```
 #sudo docker start e08e6d8fd030
-#sudo docker exec -it  echo e08e6d8fd030 "hello world"
+#sudo docker exec -it e08e6d8fd030 echo "hello world"
 ```
 8. Inspect already downloaded "alpine" docker image using docker inspect command.
 ```
