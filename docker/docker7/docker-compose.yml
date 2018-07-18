@@ -1,12 +1,12 @@
-version: '2'
-services: 
+version: '3'
+services:
   wordpress:
-    image: wordpress
-    ports: 
+    image: wordpress:latest
+    ports:
       - "8000:80"
     restart: on-failure
     environment:
-      WORDPRESS_DB_HOST: db:3306 
+      WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_PASSWORD: redhat08
     volumes:
       - WORDPRESS_DATA:/var/lib/wordpress
@@ -17,8 +17,24 @@ services:
     volumes:
       - MYSQL_DATA:/var/lib/mysql
     restart: always
-    env_file:
-      - evs.env
+    environment:
+      MYSQL_ROOT_PASSWORD: redhat08
+      MYSQL_DATABASE: db
+      MYSQL_USER: tarun
+      MYSQL_PASSWORD: redhat08
+
 volumes:
-  WORDPRESS_DATA: {} 
-  MYSQL_DATA: {}
+  WORDPRESS_DATA:
+  MYSQL_DATA:
+
+
+#go inside the datbase container and login into mysql using root user and password, create a new user tarun and grant access to db database with# the following command
+#use db;
+#grant all on db to tarun@localhost identified by 'redhat08';
+#or pass the following environment which will use root privileges
+#    environment:
+#      MYSQL_ROOT_PASSWORD: redhat08
+#      MYSQL_DATABASE: db
+#      MYSQL_USER: root
+
+
