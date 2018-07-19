@@ -1,6 +1,7 @@
 FROM alpine
 MAINTAINER Tarun goel
 RUN apk update
+RUN apk update -y
 RUN apk add nodejs
 RUN mkdir -p /app
 RUN mkdir -p /tarun
