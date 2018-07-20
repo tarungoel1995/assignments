@@ -26,7 +26,19 @@ change your working directory to /app
 
 specify the default command to be run upon container creation as mentioned below. node index.js 
 
-Link of Docker file: https://github.com/tarungoel1995/assignments/blob/master/docker/docker_4_1/Dockerfile 
+Link of Docker file: https://github.com/tarungoel1995/assignments/blob/master/docker/docker_4_1/Dockerfile
+```
+FROM alpine
+MAINTAINER Tarun goel
+RUN apk update
+RUN apk add nodejs
+RUN mkdir -p /app
+RUN mkdir -p /tarun
+COPY index.js /app
+WORKDIR /app
+CMD node index.js
+
+```
 
 3. Build image from Dockerfile. 
 
@@ -64,6 +76,20 @@ Assignment 2
 12. Build your dockerfile and tag it with "yourname:docker-web"
 
 Dockerfile Link: https://github.com/tarungoel1995/assignments/blob/master/docker/docker_4_2/Dockerfile
+
+```
+FROM ubuntu
+MAINTAINER TARUN GOEL
+RUN apt-get update
+RUN apt-get install -y apt-utils
+RUN apt-get install nodejs -y
+RUN apt-get install npm -y
+CMD ln -s /usr/bin/nodejs /usr/bin/node/
+RUN npm install -g http-server
+ADD index.html /usr/apps/hello-docker/index.html 
+WORKDIR /usr/apps/hello-docker/
+CMD http-server -s
+```
 
 ```
 #docker build -t tarun:docker-web .
