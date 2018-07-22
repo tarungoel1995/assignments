@@ -1,0 +1,17 @@
+FROM ubuntu:latest
+MAINTAINER Tarun Goel tarun.goel1995@gmail.com
+RUN apt-get -y update && \
+    apt-get -y install software-properties-common && \
+    apt-add-repository ppa:ansible/ansible && \
+    apt-get -y update && \
+    apt-get -y install ansible && \
+    apt-get -y update
+RUN apt-get -y install openssh-server iputils-ping net-tools vim && \
+	mkdir /var/run/sshd
+COPY id_rsa /root/.ssh/
+EXPOSE 22
+RUN echo "ubuntu ansible_python_interpreter=/usr/bin/python3" >> /etc/ansible/hosts && \
+	echo "centos" >> /etc/ansible/hosts 
+CMD ["/usr/sbin/sshd", "-D"]
+
+

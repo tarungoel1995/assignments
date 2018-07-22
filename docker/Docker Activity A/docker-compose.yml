@@ -1,0 +1,30 @@
+version: '3'
+services:
+  ansible:
+    build:
+      context: /home/tarun/docker/
+      dockerfile: ansible
+    restart : on-failure
+    links:
+      - ubuntu:ubuntu
+      - centos:centos 
+    volumes:
+      - ansible_data:/etc/ansible
+    depends_on:
+      - ubuntu
+      - centos
+  ubuntu:
+    restart : on-failure
+    build: 
+      context: /home/tarun/docker/
+      dockerfile: ubuntu
+
+  centos:
+    restart : on-failure
+    build: 
+      context: /home/tarun/docker/
+      dockerfile: centos
+
+volumes:
+  ansible_data:
+

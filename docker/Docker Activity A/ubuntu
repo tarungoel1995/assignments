@@ -1,0 +1,12 @@
+FROM ubuntu:16.04
+MAINTAINER Tarun Goel tarun.goel1995@gmail.com
+RUN apt-get update -y && \
+	apt-get -y install openssh-server iputils-ping net-tools && \
+	apt-get update -y && \
+    	mkdir /var/run/sshd
+
+COPY id_rsa.pub /root/.ssh/authorized_keys
+RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+#RUN echo "StrictHostKeyChecking no" >> /etc/ssh/sshd_config
+EXPOSE 22
+CMD ["/usr/sbin/sshd", "-D"] 

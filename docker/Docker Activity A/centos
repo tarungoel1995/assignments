@@ -1,0 +1,11 @@
+FROM centos:7
+MAINTAINER Tarun Goel tarun.goel1995@gmail.com
+RUN yum update -y
+RUN yum -y install openssh-server iputils-ping net-tools
+RUN yum update -y
+COPY id_rsa.pub /root/.ssh/authorized_keys
+RUN ssh-keygen -A
+EXPOSE 22
+#RUN echo "StrictHostKeyChecking no" >> /etc/ssh/sshd_config
+CMD ["/usr/sbin/sshd", "-D"]
+
