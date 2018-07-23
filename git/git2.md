@@ -2,7 +2,7 @@ ASSIGNMENT 2 GIT
 
 Assignment1:
 Create a script to generate a mearge conflict.
-
+```
 #!/bin/bash
 mkdir /home/vagrant/conflicttask
 cd /home/vagrant/conflicttask
@@ -21,18 +21,21 @@ echo "echo Hello World!" > abc.txt
 git add -A
 git commit -m "second commit in abc.txt from master branch"
 git merge slave
+```
 
 Create muliple braches and push changes for each branch into remote repo.
-
+```
 # created three branches of master (tarun,rahul,lovedeep) and then sub-branch of tarun (alien)
+```
 Link :- https://github.com/tarungoel1995/docker-assignment/tree/master
 
 Create a script to clone remote repo and check out all existing remote branch.
+
+```
 #!/bin/bash
 git clone https://github.com/tarungoel1995/docker-assignment
 cd docker-assignment
 git branch -a
-
 Clone a particular folder from a remote repo.
 mkdir clonedir
 cd clonedir
@@ -42,19 +45,25 @@ git config core.sparsecheckout true
 echo "docker/*" >> .git/info/sparse-checkout
 git pull origin master
 ls
+```
+
 Assignment2:
+
 Use both https and ssh protocal to clone your remote repo.
+```
 # git clone https://github.com/tarungoel1995/assignments.git
+
 # git clone git@github.com:tarungoel1995/assignments.git
 
 Change your working copy into a clonable remote repo
+
 on system1 (where your working directory is present)
 # cd /path/to/work/directory 
 # git init
 # you should be able to login via ssh(from remote to local)
 on system2(in which you want to clone)
 # git clone ssh://username@ipaddress/path/to/remote/repo 
-
+```
 Use file system protocal in both local and remote mode(clone from another machine using file protocal) to clone your repo.
 # (Pending)
 
@@ -208,6 +217,7 @@ commit ID
 author name
 Commit Date
 Script:-
+```
 #!/bin/bash
 mkdir gittest.sh
 cd gittest.sh
@@ -217,7 +227,7 @@ cd  hadoop
 sudo git log –since=”5 days” --pretty=format:’%cd,%an,%B,%cm’ > log.csv
 cat log.csv
 (Note:- Still not able to show the output in proper html report . Still working on that.)
-
+```
 
 
 
