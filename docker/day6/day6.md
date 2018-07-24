@@ -58,6 +58,14 @@ services:
     depends_on:
       - databases
 ```
+ENVIRNMENT VARIABLES
+
+```
+MYSQL_ROOT_PASSWORD=redhat08
+MYSQL_DATABASE=nginxdb
+MYSQL_USER=root
+```
+
 ```
 #docker-compose up -d
 ```
