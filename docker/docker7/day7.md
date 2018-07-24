@@ -95,6 +95,7 @@ Stop and remove your docker container using docker-compose.
 
 ```
 #docker-compose down
+```
 ![compose down](https://github.com/tarungoel1995/assignments/blob/master/docker/docker7/media/docker-composeup.png)
 
 
