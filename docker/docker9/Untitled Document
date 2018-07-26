@@ -1,0 +1,28 @@
+version: "3"
+services:
+  wordpress:
+    image: wordpress
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: redhat08
+      WORDPRESS_DB_PASSWORD: redhat08
+    deploy:
+      replicas: 3
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: 256M
+
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: wordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+    deploy:
+      resources:
+        limits:
+          cpus: "0.50"
+          memory: 512M
+
