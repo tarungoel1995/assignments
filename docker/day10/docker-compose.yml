@@ -1,0 +1,22 @@
+version: '3'
+services:
+  spring3hibernateapp:
+    build:
+      context: /home/tarun/docker/day10/
+      dockerfile: Dockerfile
+    deploy:
+      replicas: 3
+    restart : on-failure
+    ports:
+      - 9000:8080
+    volumes:
+      - spring3app:/usr/local/tomcat/webapps/
+    networks:
+      - my-net
+
+volumes:
+  spring3app:
+
+networks:
+  my-net:
+
