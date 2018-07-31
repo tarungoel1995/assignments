@@ -1,0 +1,4 @@
+---
+# handlers file for nginx_exporter
+- name: daemon_reload
+  command: systemctl daemon-reload

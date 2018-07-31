@@ -1,0 +1,4 @@
+---
+# handlers file for jenkins_exporter
+- name: daemon_reload
+  command: systemctl daemon-reload

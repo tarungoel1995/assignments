@@ -1,0 +1,15 @@
+Types of Monitoring 
+
+--Infra
+--Application
+--Logging
+
+Pros and cons of pull and push based monitoring tools ?
+
+--Infra Monitoring (Prometheus and Grafana)
+- Pull based
+- Open source
+- for every service monitoring exporters are used
+- Prometheus is a time series database with capabilities of monitoring
+- uses sqlite3 db
+- 

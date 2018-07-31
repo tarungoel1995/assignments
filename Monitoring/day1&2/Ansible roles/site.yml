@@ -1,0 +1,8 @@
+---
+- hosts: test
+  roles:
+    - node_exporter
+    - nginx_exporter
+    - jenkins_exporter
+    - collectd_exporter
+    - mysqld_exporter

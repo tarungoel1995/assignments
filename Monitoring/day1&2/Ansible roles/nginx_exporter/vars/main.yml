@@ -1,0 +1,5 @@
+---
+# vars file for nginx_exporter
+url: https://github.com/hnlq715/nginx-vts-exporter/releases/download/v0.10.3/nginx-vts-exporter-0.10.3.linux-amd64.tar.gz
+
+path: /opt/

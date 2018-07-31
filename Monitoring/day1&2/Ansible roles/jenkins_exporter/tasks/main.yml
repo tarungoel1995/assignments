@@ -1,0 +1,27 @@
+---
+# tasks file for jenkins_exporter
+- name: Downloading and unarchiving.
+  unarchive:
+    src: "{{ url }}"
+    dest: "{{ path }}"
+    remote_src: yes
+
+- name: Creating service for jenkins_exporter.
+  template:
+    src: jenkins_exporter.service
+    dest: /etc/systemd/system/
+    mode: 0755
+    owner: root
+  notify: daemon_reload
+     
+- name: Enabling the jenkins_exporter service
+  service:
+    name: jenkins_exporter
+    enabled: yes
+
+- name: Starting the jenkins_exporter service
+  service:
+    name: jenkins_exporter
+    state: started
+...
+
