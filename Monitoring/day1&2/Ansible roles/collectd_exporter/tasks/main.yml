@@ -19,7 +19,7 @@
     name: collectd_exporter
     enabled: yes
 
-- name: Starting the clooectd_exporter service
+- name: Starting the collectd_exporter service
   service:
     name: collectd_exporter
     state: started
