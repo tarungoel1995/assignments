@@ -20,7 +20,7 @@ scale down if av. cpu threashold < 40
 
 #verification applied fake load
 
-![fake load(https://github.com/tarungoel1995/assignments/blob/master/AWS/day8/media/fake%20load.png)
+![fake load](https://github.com/tarungoel1995/assignments/blob/master/AWS/day8/media/fake%20load.png)
 
 #auto scaleup alarm
 
