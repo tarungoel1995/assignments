@@ -41,7 +41,7 @@ scale down if av. cpu threashold < 40
 
 #Verification of Auto scale down by removing the fake load
 
-![fake load removal(https://github.com/tarungoel1995/assignments/blob/master/AWS/day8/media/removaloffakeload.png)
+![fake load removal](https://github.com/tarungoel1995/assignments/blob/master/AWS/day8/media/removaloffakeload.png)
 
 # Auto scaling down alarm
 
