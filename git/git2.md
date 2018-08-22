@@ -68,16 +68,22 @@ Use file system protocal in both local and remote mode(clone from another machin
 # (Pending)
 
 Ignore backup, swp and pyc file from being commited.
+```
 # cd /path/to/your/git/repo
 # touch .gitignore
 # git config –global core.excludeFile /path/to/your/.gitignore/file
 # echo “*.pyc” > .gitignore
 # touch abcd.pyc
 # git status (you will not see any untracked abcd.pyc file)
+```
 
 Assignment3:
+
 Add remote name parent for ot-training/jenkins to your own repo.
+
 Check and verify two remotes.
+
+```
 # git clone https://github.com/tarungoel1995/jenkins.git
 # cd jenkins/
 # git remote add parent https://github.com/tarungoel1995/jenkins.git
@@ -90,7 +96,7 @@ Check and verify two remotes.
 # git add -A
 # git commit -m "adding xyz.txt"
 # git push origin master
-
+```
 
 Git fetch changes from parent repo.
 #git clone https://github.com/tarungoel1995/jenkins.git
