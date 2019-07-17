@@ -102,6 +102,7 @@ Send jenkins console logs in mail not as attachement but as plain text.
 - Save the settings
 - Create a project and build it.
 - Check the email-notification for the build console.
+
 Enable slack integration for jenkins jobs build notifications. 
 - Click on Manage Jenkins
 - Click on Manage Plug-ins
