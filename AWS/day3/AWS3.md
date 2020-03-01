@@ -8,7 +8,7 @@ Steps: #Launch a new linux t2.micro ec2 instance. Take SSH login into same.
  #mv /etc/sudoers /etc/sudoers.bkp
 #when i try to to sudo su, iwas getting this error
 ```
-![errror](https://github.com/tarungoel1995/assignments/blob/master/AWS/day3/media/error.png)
+![errror](https://gitlab.com/tarungoel1995/assignments/-/blob/master/AWS/day3/media/error.png)
 
 ```
 #to resolve this issue i created a new instance and stopped the instance in which error was coming.
