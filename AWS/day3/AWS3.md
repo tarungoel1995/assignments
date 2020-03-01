@@ -13,27 +13,27 @@ Steps: #Launch a new linux t2.micro ec2 instance. Take SSH login into same.
 ```
 #to resolve this issue i created a new instance and stopped the instance in which error was coming.
 ```
-![recovery instance](https://github.com/tarungoel1995/assignments/blob/master/AWS/day3/media/instances.png)
+![recovery instance](/AWS/day3/media/instances.png)
 
 ```
 #dettach the vloume of old instance and attach the same volume with new instance.
 ```
 
-![volumesection](https://github.com/tarungoel1995/assignments/blob/master/AWS/day3/media/volumes.png)
+![volumesection](/AWS/day3/media/volumes.png)
 
 ```
 #SSH login in new instance and create a recovery  directory in / which will work as a mount point for extra volume. And preformed the following steps:
 ```
 
-![mount](https://github.com/tarungoel1995/assignments/blob/master/AWS/day3/media/mountingerrormachinevolume.png)
+![mount](/AWS/day3/media/mountingerrormachinevolume.png)
 
-![moving the file and again unmonting the volume](https://github.com/tarungoel1995/assignments/blob/master/AWS/day3/media/movingsudoersfileandunmounting.png)
+![moving the file and again unmonting the volume](/AWS/day3/media/movingsudoersfileandunmounting.png)
 
 ```
 #Dettach the volume from the recovery instance and attach the vloume to old instance and when SSH login in old instance issue is resolved.
 ```
 
-![recovered](https://github.com/tarungoel1995/assignments/blob/master/AWS/day3/media/recovered.png)
+![recovered](/AWS/day3/media/recovered.png)
 
 
 Task 2
@@ -63,7 +63,7 @@ cd AWSROLES
 ansible-playbook main.yml
 ```
 
-![nginx server](https://github.com/tarungoel1995/assignments/blob/master/AWS/day3/media/day3-task2.png)
+![nginx server](/AWS/day3/media/day3-task2.png)
 
 
 Task 3
@@ -98,11 +98,11 @@ fi
 }
 ```
 
-![joboutput](https://github.com/tarungoel1995/assignments/blob/master/AWS/day3/media/startjenkin.png)
+![joboutput](/AWS/day3/media/startjenkin.png)
 
 
-![console output](https://github.com/tarungoel1995/assignments/blob/master/AWS/day3/media/startedbyjenkin.png)
+![console output](/AWS/day3/media/startedbyjenkin.png)
 
 
-![stopped](https://github.com/tarungoel1995/assignments/blob/master/AWS/day3/media/stoppedbyjenkinjob.png)
+![stopped](/AWS/day3/media/stoppedbyjenkinjob.png)
 
