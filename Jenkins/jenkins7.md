@@ -16,7 +16,8 @@ Assignment1:
  Now the nodes are being started.
 (Similarly we can multiple nodes which act as slave for master server)
 
-link: https://github.com/tarungoel1995/assignments/blob/master/media/masterslavesetup.png
+![master slave setup](https://github.com/tarungoel1995/assignments/blob/master/AWS/day8/media/snapshotsofami.png)
+
 
 
 
