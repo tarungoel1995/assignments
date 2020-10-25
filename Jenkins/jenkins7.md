@@ -60,7 +60,9 @@ Save and build the job.
      Assignmnet2:  Use jenkins rest api to
 1. Get the list of all jobs
 Command:
-#curl -u tarungoel1995:11d5e1c07cb82e34b45bf909e21f0403 http://192.168.33.10:8080/api/json?pretty=true
+```
+curl -u tarungoel1995:11d5e1c07cb82e34b45bf909e21f0403 http://192.168.33.10:8080/api/json?pretty=true
+```
 
 Output:-
 {
@@ -260,14 +262,18 @@ Output:-
 
 2. Get the last build status
 Command:
-# curl -u tarungoel1995:11d5e1c07cb82e34b45bf909e21f0403 http://192.168.33.10:8080/job/Hello%20World/lastSuccessfulBuild/api/json
+```
+curl -u tarungoel1995:11d5e1c07cb82e34b45bf909e21f0403 http://192.168.33.10:8080/job/Hello%20World/lastSuccessfulBuild/api/json
+```
 
 Output:
 {"_class":"hudson.model.FreeStyleBuild","actions":[{"_class":"hudson.model.CauseAction","causes":[{"_class":"hudson.model.Cause$UpstreamCause","shortDescription":"Started by upstream project \"descriptive\" build number 2","upstreamBuild":2,"upstreamProject":"descriptive","upstreamUrl":"job/descriptive/"}]},{},{},{}],"artifacts":[],"building":false,"description":null,"displayName":"#3","duration":53,"estimatedDuration":51,"executor":null,"fullDisplayName":"Hello World #3","id":"3","keepLog":false,"number":3,"queueId":92,"result":"SUCCESS","timestamp":1528383688682,"url":"http://192.168.33.10:8080/job/Hello%20World/3/","builtOn":"","changeSet":{"_class":"hudson.scm.EmptyChangeLogSet","items":[],"kind":null},"culprits":[]}
 
 3. Get the console o/p of a job build.
 Command:
-# curl -s -S -u tarungoel1995:11d5e1c07cb82e34b45bf909e21f0403 http://192.168.33.10:8080/job/Hello%20World/3/logText/progressiveText?start=0
+```
+curl -s -S -u tarungoel1995:11d5e1c07cb82e34b45bf909e21f0403 http://192.168.33.10:8080/job/Hello%20World/3/logText/progressiveText?start=0
+```
 
 Output:
 Started by upstream project "descriptive" build number 2
@@ -282,7 +288,9 @@ Finished: SUCCESS
 
 4. Trigger a jenkins job build
 Command:
-# curl -u tarungoel1995:11d5e1c07cb82e34b45bf909e21f0403 -X POST http://192.168.33.10:8080/job/Hello%20World/build
+```
+curl -u tarungoel1995:11d5e1c07cb82e34b45bf909e21f0403 -X POST http://192.168.33.10:8080/job/Hello%20World/build
+```
 
 Output:
 #you will see that a build is triggered in that job.
