@@ -31,8 +31,11 @@ Give the name of slave in the box of Label expression.
 Click on save and build now 
 In Console Output you can see that your job is being built on Specfic slave which you selected.
 
-link: https://github.com/tarungoel1995/assignments/blob/master/media/slave2restrict.png
-link: https://github.com/tarungoel1995/assignments/blob/master/media/vagrantrestrcit.png
+![Slave 2 restrict](https://github.com/tarungoel1995/assignments/blob/master/media/slave2restrict.png)
+
+
+![Vagrant restrict](https://github.com/tarungoel1995/assignments/blob/master/media/vagrantrestrcit.png)
+
 
 
 3. Create a job that can run on either salve(any of the two).
@@ -45,7 +48,8 @@ Save and build the job.
 (Job will run on either of slaves )
 
 
-link: https://github.com/tarungoel1995/assignments/blob/master/media/multiplenode.png
+![MultiNode](https://github.com/tarungoel1995/assignments/blob/master/media/multiplenode.png)
+
 
 
 
